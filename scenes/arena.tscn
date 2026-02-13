@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://o2cxhxbkhq0b"]
+
+[ext_resource type="Texture2D" uid="uid://dqcj21n5rbbcp" path="res://assets/bg/str_stonegen6.png" id="1_wl4x5"]
+[ext_resource type="Texture2D" uid="uid://bcfjm3rv2qqn2" path="res://assets/bg/str_stoneflr5.png" id="2_olpmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl4x5"]
+size = Vector2(2067, 235)
+
+[node name="Arena" type="Node2D"]
+
+[node name="Wall3" type="TextureRect" parent="."]
+offset_left = 1218.0
+offset_right = 2070.0
+offset_bottom = 848.0
+texture = ExtResource("1_wl4x5")
+expand_mode = 3
+
+[node name="Wall2" type="TextureRect" parent="."]
+offset_right = 851.0
+offset_bottom = 848.0
+texture = ExtResource("1_wl4x5")
+stretch_mode = 4
+
+[node name="Wall" type="TextureRect" parent="."]
+offset_left = 848.0
+offset_right = 1700.0
+offset_bottom = 848.0
+texture = ExtResource("1_wl4x5")
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 998)
+
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
+offset_top = -157.0
+offset_right = 2068.0
+offset_bottom = 77.0
+texture = ExtResource("2_olpmc")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1035.5, -39.5)
+shape = SubResource("RectangleShape2D_wl4x5")
